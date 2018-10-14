@@ -25,6 +25,10 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
+
+  arr.sort((a,b) => a>b);
+  return arr;
+
   // Solution code here...
 };
 
@@ -35,6 +39,10 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
+
+  arr.sort((a,b) => a.length>b.length);
+  return arr;
+
   // Solution code here...
 };
 
@@ -47,6 +55,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
+
+  arr.sort((a,b) => a.toUpperCase() > b.toUpperCase());
+  return arr;
   // Solution code here...
 };
 
@@ -64,6 +75,9 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
+
+  arr.sort((a,b) => a.price-b.price);
+  return arr;
   // Solution code here...
 };
 
@@ -76,6 +90,9 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
+
+  arr.sort((a,b) => a.toString().length-b.toString().length);
+  return arr;
   // Solution code here...
 };
 
@@ -99,6 +116,9 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+
+  arr.sort((a,b) => a.lastName > b.lastName);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +133,22 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+arr.sort((a,b) => {
+if(a.lastName!==b.lastName){
+  return a.lastName>b.lastName
+}
+
+else if (a.firstName !== b.firstName) {
+  return a.firstName>b.firstName
+}
+
+else 
+ return a.age>b.age
+
+});
+
+return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,6 +175,24 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+
+  arr.sort((a,b) => {
+
+    if(a.dayOfWeek!==b.dayOfWeek) {
+      return a.dayOfWeek.index<b.dayOfWeek.index
+
+    }
+
+    else if(a.dayOfWeek===b.dayOfWeek) {
+      return a.dayOfWeek + b.dayOfWeek;
+    
+  
+    }
+
+  
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
